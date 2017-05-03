@@ -29,7 +29,7 @@ once pulled from git.
 # Development Example
 
 Fork and clone the following example configuration: 
-https://stash.forgerock.org/scm/cloud/forgeops-init.git. 
+https://github.com/amido/forgeops-init.git.
 
 Assume this is saved to your home directory at ~/forgeops-init.
 

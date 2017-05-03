@@ -1,6 +1,6 @@
 cookieDomain: .example.com
-amster:
-  skipImport: true
 registry: ""
 stackConfigSource:
-  emptyDir: {}
+  gitRepo:
+    repository: https://github.com/amido/forgeops-init
+    revision: dev/0.0.1
