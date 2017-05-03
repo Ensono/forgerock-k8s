@@ -1,6 +1,8 @@
 cookieDomain: .example.com
 registry: ""
 stackConfigSource:
-  gitRepo:
-    repository: https://github.com/amido/forgeops-init
-    revision: dev/0.0.1
+#  gitRepo:
+#    repository: https://github.com/amido/forgeops-init
+#    revision: dev/0.0.1
+  hostPath:
+   path: /Users/efthymios.kartsonakis/Dev
