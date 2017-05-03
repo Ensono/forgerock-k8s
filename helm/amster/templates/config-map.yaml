@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: amster-config
+data:
+{{- if .Values.amster.skipImport }}
+  00_install.amster: |
+    install-openam \
+    --serverUrl {{ .Values.serverBase }}/openam \
+    --authorizedKey  /var/secrets/amster/authorized_keys \
+    --cookieDomain {{.Values.cookieDomain }} \
+    --adminPwd {{ .Values.amadmin_pw }} \
+    --cfgStore dirServer \
+    --cfgStoreHost {{.Values.configStore.host }} \
+    --cfgStoreDirMgrPwd  {{.Values.configStore.password }}  \
+    --cfgStorePort {{.Values.configStore.port }}  \
+    --policyAgentPwd Passw0rd \
+    --pwdEncKey 123456789012 \
+    --acceptLicense \
+    --lbSiteName site1 \
+    --lbPrimaryUrl https://openam{{ .Values.cookieDomain }}/openam \
+    --cfgDir /root/openam
+    :exit
+{{ else }}
+  00_install.amster: |
+    install-openam \
+    --serverUrl {{ .Values.serverBase }}/openam \
+    --authorizedKey  /var/secrets/amster/authorized_keys \
+    --cookieDomain {{.Values.cookieDomain }} \
+    --adminPwd {{ .Values.amadmin_pw }} \
+    --cfgStore dirServer \
+    --cfgStoreHost {{.Values.configStore.host }} \
+    --cfgStoreDirMgrPwd  {{.Values.configStore.password }}  \
+    --cfgStorePort {{.Values.configStore.port }}  \
+    --policyAgentPwd Passw0rd \
+    --pwdEncKey 123456789012 \
+    --acceptLicense \
+    --cfgDir /root/openam
+    :exit
+  01_import.amster: |
+    connect http://openam/openam -k /var/secrets/amster/id_rsa
+    import-config --path {{.Values.amsterImportPath }} --clean {{.Values.amsterClean }}
+    :exit
+{{ end }}

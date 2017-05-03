@@ -1,0 +1,41 @@
+# custom.yaml file with value overrides for charts,
+# This is a sample template from a GKE deployment
+# Edit this for your environment.
+
+# Registry must have trailing /
+registry: gcr.io/
+repo: engineering-devops
+tag: latest
+
+cookieDomain: .homeunix.org
+
+# You must configure at least one stack source.
+# This is where the configuration comes from.
+stackConfigSource:
+  gitRepo:
+    repository: https://stash.forgerock.org/scm/cloud/forgeops-init.git
+    revision: release/5.0.0
+
+# OpenDJ
+storageClass: fast
+
+opendj:
+  image: opendj
+  tag: latest
+
+openam:
+  image: openam
+  tag: latest
+
+amster:
+  image: amster
+  tag:  latest
+
+openidm:
+  image: openidm
+  tag: latest
+
+openig:
+  image: openig
+  tag: latest
+  projectHome: openig

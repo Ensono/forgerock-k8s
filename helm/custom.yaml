@@ -1,0 +1,6 @@
+cookieDomain: .example.com
+amster:
+  skipImport: true
+registry: ""
+stackConfigSource:
+  emptyDir: {}
