@@ -4,7 +4,7 @@ Run the ForgeRock Identity Platform (OpenAM, OpenDJ, OpenIDM, OpenIG) on Kuberne
 
 # Contributing 
 
-This repository is located at https://stash.forgerock.org/projects/DOCKER/repos/fretes
+This repository is located at https://stash.forgerock.org/projects/CLOUD/repos/forgeops/browse
 
 Pull requests should be made on the Stash repository. You will 
 need a ForgeRock community account to create pull requests.
@@ -17,7 +17,7 @@ http://kubernetes.io
 This has been tested with Kubernetes 1.5.2 on Minikube and Google Container Engine (GKE)
 
 You will need the ForgeRock Docker images. You can build these using the
-Dockerfiles in https://stash.forgerock.org/projects/DOCKER/repos/docker
+Dockerfiles in https://stash.forgerock.org/projects/CLOUD/repos/forgeops/browse/docker
 
 # Helm
 
